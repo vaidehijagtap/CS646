@@ -9,13 +9,14 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    tools:context="com.zybooks.pizzaparty.MainActivity">
+    tools:context="com.zybooks.pizzaparty.MainActivity"
+    android:background="@drawable/pizza">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Number of people?"
-        android:textSize="24sp"
+        android:textSize="@dimen/label_text_size"
         android:labelFor="@id/num_attend_edit_text" />
 
     <EditText
@@ -42,7 +43,7 @@
         android:orientation="horizontal">
         <RadioButton
             android:id="@+id/light_radio_button"
-            android:text="Light"
+            android:text="@string/lightt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <RadioButton
@@ -72,5 +73,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:onClick="calculateClick" />
+        android:onClick="calculateClick"
+        style="@style/CalcButton"/>
 </LinearLayout>
