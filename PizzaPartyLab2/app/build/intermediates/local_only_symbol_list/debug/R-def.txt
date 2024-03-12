@@ -1,0 +1,30 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color dark_green
+color gray
+color my_green
+color white
+dimen label_text_size
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable pizza
+drawable pizza_background
+id activity_main
+id calc_button
+id hungry_radio_group
+id light_radio_button
+id medium_radio_button
+id num_attend_edit_text
+id num_pizzas_text_view
+id ravenous_radio_button
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string lightt
+style Base.Theme.PizzaParty
+style CalcButton
+style Theme.PizzaParty
+xml backup_rules
+xml data_extraction_rules

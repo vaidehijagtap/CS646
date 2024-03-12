@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="dark_green">#22AA22</color>
+    <color name="gray">#AAA</color>
+    <color name="my_green">#11BB11</color>
+    <color name="white">#FFFFFFFF</color>
+    <dimen name="label_text_size">30sp</dimen>
+    <string name="app_name">Pizza Party</string>
+    <string name="lightt">Light Size Pizza</string>
+    <style name="Base.Theme.PizzaParty" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+        <item name="colorPrimary">@color/my_green</item>
+    </style>
+    <style name="CalcButton">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+    <style name="Theme.PizzaParty" parent="Base.Theme.PizzaParty"/>
+</resources>
