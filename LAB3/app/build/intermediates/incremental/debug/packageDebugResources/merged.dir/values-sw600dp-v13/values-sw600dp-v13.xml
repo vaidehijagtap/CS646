@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="fab_margin">16dp</dimen>
-    <integer name="column_number">3</integer>
-</resources>
