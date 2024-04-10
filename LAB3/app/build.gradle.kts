@@ -22,12 +22,9 @@ android {
 
     buildTypes {
         release {
-            // optimizacion y ofuscacion de clases y funciones
             isMinifyEnabled = false
-            // optimizacion de los recursos
             isShrinkResources = false
 
-            // @Keep para ignorar clases
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -44,12 +41,10 @@ android {
         jvmTarget = "1.8"
     }
 
-    // ViewBinding
     buildFeatures {
         viewBinding = true
     }
 
-    // Documentacion
     subprojects {
         apply(plugin = "org.jetbrains.dokka")
     }
@@ -81,12 +76,10 @@ dependencies {
     // QrCode
     implementation(libs.zxing)
 
-    // Ktor server
     implementation(libs.ktor.core)
     implementation(libs.ktor.server)
     implementation(libs.ktor.server.netty)
 
-    // Inyeccion de dependencias
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
