@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.activities.QuestionTypeActivity">
 
-    <!-- Top Bar Fragment -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/header_fragment"
         android:name="com.pprior.quizz.ui.fragments.HeadFragment"
@@ -17,7 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Titulo de la actividad -->
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
@@ -30,7 +28,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Fragmento con las tarjetas de los tipos de preguntas -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/cards_types"
         android:name="com.pprior.quizz.ui.fragments.TypesFragment"
