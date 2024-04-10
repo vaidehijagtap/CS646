@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="activity_question_type_title">Selecciona el tipo de pregunta:</string>
+    <string name="bar_desc">Tipo de preguntas de puntuación para marcar un punto en una barra de progresión</string>
+    <string name="bar_title">Barra Progresiva</string>
+    <string name="delete_question_message">¿Estás seguro de que quieres eliminar esta pregunta?</string>
+    <string name="negative_button_message">Cancelar</string>
+    <string name="other_desc">Tipo de preguntas personalizado con hasta tres respuestas posibles</string>
+    <string name="other_title">Otros</string>
+    <string name="positive_button_message">Confirmar</string>
+    <string name="question_answer">Respuesta:</string>
+    <string name="question_question">Pregunta:</string>
+    <string name="questions_exists">Esa pregunta ya existe</string>
+    <string name="save_button">Guardar</string>
+    <string name="stars_desc">Tipo de preguntas de puntuación para seleccionar una cierta cantidad de estrellas</string>
+    <string name="stars_title">Estrellas</string>
+    <string name="yes_aswers">Si</string>
+    <string name="yes_no_desc">Tipo de preguntas sencillo más sencillo con dos tipos de respuestas</string>
+    <string name="yes_no_title">Si/No</string>
+</resources>

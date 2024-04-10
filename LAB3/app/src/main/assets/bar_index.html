@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Slider Question</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            width: 50%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            color: black;
+            cursor: pointer;
+            font-size: 2em;
+        }
+
+        button:hover {
+            background-color: #b5b5b5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 5em;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 15px;
+            border-radius: 5px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            margin-right: 300px;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #04AA6D;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #04AA6D;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="myForm">
+        <h1 id="questionText">[QUESTION]</h1>
+        <br><br>
+
+        <div>
+            <input type="range" min="1" max="5" value="3" class="slider" id="myRange">
+        </div>
+        <br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        document.getElementById('myForm').onsubmit = function(event) {
+            event.preventDefault();
+
+            var choice = document.getElementById('myRange').value;
+
+            fetch(
+                '/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: 'choice=' + encodeURIComponent(choice),
+                }
+            ) 
+                .then(response => response.ok ? response.text() : Promise.reject('Server response error'))
+                .then(text => { 
+                console.log('Response received: ', text);
+                window.location.href = '/question';
+            }) 
+                .catch(console.error);
+        };
+
+        
+        window.onload = function() {
+            window.history.replaceState({}, document.title, "/question");
+        }
+    </script>
+
+</body>
+</html>
