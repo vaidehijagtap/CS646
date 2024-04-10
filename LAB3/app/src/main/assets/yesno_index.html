@@ -103,9 +103,9 @@
                     body: 'choice=' + encodeURIComponent(choice),
                 }
             ) 
-                .then(response => response.ok ? response.text() : Promise.reject('Error en la respuesta del servidor'))
+                .then(response => response.ok ? response.text() : Promise.reject('Server response error'))
                 .then(text => { 
-                console.log('Respuesta recibida: ', text);
+                console.log('Response received: ', text);
                 window.location.href = '/question';
             }) 
                 .catch(console.error);
