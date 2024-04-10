@@ -48,7 +48,6 @@
             font-size: 5em;
         }
 
-        /* Estilo para el slider */
         .slider {
             -webkit-appearance: none;
             width: 100%;
@@ -96,31 +95,27 @@
     </form>
 
     <script>
-        // El codigo se ejecuta cuando pulso el boton enviar
         document.getElementById('myForm').onsubmit = function(event) {
-            // Evita que se envien datos vacios o por defecto
             event.preventDefault();
 
-            // Obtenemos el valor del slider
             var choice = document.getElementById('myRange').value;
 
-            // Realizamos la peticion POST al servidor
             fetch(
                 '/submit', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                     body: 'choice=' + encodeURIComponent(choice),
                 }
-            ) // Si la respuesta es correcta la almacenamos. Si no, mostramos un error
+            ) 
                 .then(response => response.ok ? response.text() : Promise.reject('Error en la respuesta del servidor'))
-                .then(text => { // Si la respuesta es correcta, redirigimos a la pagina de exito
+                .then(text => { 
                 console.log('Respuesta recibida: ', text);
                 window.location.href = '/question';
-            }) // Si ocurre algun error, lo mostramos en la consola
+            }) 
                 .catch(console.error);
         };
 
-        // Impide que el usuario pueda volver despues de votar
+        
         window.onload = function() {
             window.history.replaceState({}, document.title, "/question");
         }
