@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.pprior.quizz.app-mergeDebugResources-34:/values-sw360dp-v13/values-sw360dp-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/vaidehijagtap/Downloads/QuizApp/app/src/main/res/values-sw360dp/dimens.xml",
+                    "from": {
+                        "startLines": "5,3,4,2",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "208,101,157,55",
+                        "endColumns": "41,55,50,45",
+                        "endOffsets": "245,152,203,96"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,97,153,204",
+                        "endColumns": "41,55,50,45",
+                        "endOffsets": "92,148,199,245"
+                    }
+                }
+            ]
+        }
+    ]
+}
