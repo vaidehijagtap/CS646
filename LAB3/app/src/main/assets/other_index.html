@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Other Question</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button, input[type="radio"] + label {
+            width: 50%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            color: black;
+            cursor: pointer;
+            font-size: 2em;
+        }
+
+        button:hover {
+            background-color: #b5b5b5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 5em;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        input[type="radio"] + label {
+            padding: 20px 40px;
+            background-color: #ccc;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 50px;
+            font-size: 2em;
+        }
+
+        input[type="radio"]#btn1:checked + label {
+            background-color: #ff0000;
+            color: white;
+        }
+
+        input[type="radio"]#btn2:checked + label {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        input[type="radio"]#btn3:checked + label {
+            background-color: #0000ff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<form id="myForm">
+    <h1 id="questionText">[QUESTION]</h1>
+    <br><br>
+
+    <div>
+        <input type="radio" id="btn1" name="choice" value="[ANSWER0]">
+        <label for="btn1">[ANSWER0]</label>
+        <input type="radio" id="btn2" name="choice" value="[ANSWER1]">
+        <label for="btn2">[ANSWER1]</label>
+        <input type="radio" id="btn3" name="choice" value="[ANSWER2]">
+        <label for="btn3">[ANSWER2]</label>
+    </div>
+    <br><br><br>
+
+    <button type="submit">Enviar</button>
+</form>
+
+<script>
+    document.getElementById('myForm').onsubmit = function(event) {
+        event.preventDefault();
+
+        var choice = document.querySelector('input[name="choice"]:checked').value;
+
+        fetch(
+            '/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'choice=' + encodeURIComponent(choice),
+            }
+        )
+            .then(response => response.ok ? response.text() : Promise.reject('Server response error'))
+            .then(text => {
+            console.log('Response received: ', text);
+            window.location.href = '/question';
+        })
+            .catch(console.error);
+    };
+
+    window.onload = function() {
+        window.history.replaceState({}, document.title, "/question");
+    }
+</script>
+
+</body>
+</html>
